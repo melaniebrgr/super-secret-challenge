@@ -39,7 +39,21 @@
 }
 .bg-orange {
   background-image: url('../img/hex-orange.svg');
+  // &:hover {
+  //   background-image: url('../img/hex-orange-hover.svg');
+  // }
 }
+
+span.rotate-ccw-90 {
+  transform: translateY(-50%) rotateZ(-90deg);
+}
+span.rotate-ccw-45 {
+  transform: translateY(-50%) rotateZ(-45deg);
+}
+span.rotate-cw-45 {
+  transform: translateY(-50%) rotateZ(45deg);
+}
+
 .bg-navy {
   background-image: url('../img/hex-navy.svg');
 }
