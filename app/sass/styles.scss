@@ -1,0 +1,55 @@
+@import 'reset/meyer-reset';
+@import 'reset/normalize/import-now';
+
+$green: #84ca58;
+$white: #fff;
+$large-hex: #000;
+$small-hex: #fff;
+
+$width: 130px;
+$height: 75.056px;
+$border-height: 37.528px;
+
+@mixin triangles($position) {
+	content: "";
+	position: absolute;
+	width: 0;
+  border-left: $width/2 solid transparent;
+  border-right: $width/2 solid transparent;
+  border-#{$position}: $border-height solid $large-hex;
+}
+
+body {
+	background-color: pink;
+}
+
+.container {
+	margin: 10rem;
+}
+
+.hex {
+	width: $width;
+	height: $height;
+	background-color: $large-hex;
+	z-index: 1;
+	&:before {
+		@include triangles(bottom);
+    margin-top: -$border-height;
+	}
+	&:after {
+		@include triangles(top);
+	  margin-top: $border-height*2;
+	}
+	.hex {
+		background-color: $small-hex;
+		position: absolute;
+		transform: scale(0.97);
+		z-index: 2;
+		&:before {
+			border-bottom-color: $small-hex;
+		}
+		&:after {
+			border-top-color: $small-hex;
+		}
+	}
+}

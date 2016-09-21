@@ -18,5 +18,8 @@
     "gulp-sequence": "^0.4.6",
     "gulp-uglify": "^2.0.0",
     "gulp-usemin": "^0.3.24"
+  },
+  "dependencies": {
+    "jquery": "^3.1.0"
   }
 }

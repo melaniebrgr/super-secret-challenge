@@ -11,23 +11,23 @@ var gulp = require('gulp'),
 
 gulp.task('server', function() {
   connect.server({
-    root: './app',
+    root: './',
     livereload: true
   });
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./app/sass/**/*.scss')
+  return gulp.src('./sass/**/*.scss')
     .pipe(sass())
     .pipe(autoprefixer({
       browsers: ['> 20%'],
       cascade: false
     }))
-    .pipe(gulp.dest('./app/css/'));
+    .pipe(gulp.dest('./css/'));
 });
 
 gulp.task('usemin', function() {
-  return gulp.src('./app/index.html')
+  return gulp.src('./index.html')
     .pipe(usemin({
       css: [ cssmin() ],
       html: [ htmlmin() ],
@@ -35,17 +35,17 @@ gulp.task('usemin', function() {
       // inlinejs: [ uglify() ],
       // inlinecss: [ cssmin(), 'concat' ]
     }))
-    .pipe(gulp.dest('./build/'));
+    .pipe(gulp.dest('build/'));
 });
 
 gulp.task('reload', function() {
-  gulp.src('./app/**/*')
+  gulp.src('./**/*')
     .pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
-  gulp.watch( './app/sass/**/*.scss', ['sass']);
-  gulp.watch( './app/**/*', ['reload']);
+  gulp.watch( './sass/**/*.scss', ['sass']);
+  // gulp.watch( './**/*', ['reload']);
 });
 
 gulp.task('default', gulpSequence( 'sass', 'server', 'reload', 'watch'));
