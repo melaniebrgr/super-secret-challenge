@@ -1,13 +1,49 @@
 .col-1 {
+  color: $navy;
+  font-size: 0.7vw;
   text-align: center;
   span {
     display: inline-block;
-    font-size: 0.7vw;
     line-height: 0.9vw;
-    padding: 1vw;
+    padding: 0.3vw;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     text-transform: uppercase;
   }
+}
+
+.bold {
+  font-weight: 700;
+}
+.black {
+  color: $black;
+}
+.white {
+  color: $white;
+}
+.light-blue {
+  color: $light-blue;
+}
+
+.larger {
+  font-size: 0.8vw;
+  letter-spacing: 0.05vw;
+}
+
+.bg-yellow {
+  background-image: url('../img/hex-yellow.svg');
+}
+.bg-green {
+  background-image: url('../img/hex-green.svg');
+}
+.bg-orange {
+  background-image: url('../img/hex-orange.svg');
+}
+.bg-navy {
+  background-image: url('../img/hex-navy.svg');
+}
+.bg-none {
+  background-image: none;
+  z-index: -1;
 }
