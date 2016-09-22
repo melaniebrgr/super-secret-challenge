@@ -1,6 +1,7 @@
 // color variables
 $white: #fff;
 $black: #000;
+$black-40: lighten($black, 40%);
 $navy: #355470;
 $light-blue: #7cbdf7;
 $orange: #ff972a;
@@ -10,6 +11,8 @@ $green: #84ca58;
 
 // size variables
 $col-1-size: 8.3333vw;
+$col-margin-h-size: 0.25vw;
+$col-margin-v-size: 1.97vw;
 
 // generic base styles
 html {
