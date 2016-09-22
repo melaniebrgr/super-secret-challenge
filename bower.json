@@ -1,0 +1,21 @@
+{
+  "name": "beehive",
+  "description": "super secret challenge",
+  "main": "index.js",
+  "authors": [
+    "Melanie Burger"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/melaniebrgr/super-secret-challenge",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}
