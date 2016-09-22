@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-	// clean = require('gulp-clean'),
+	clean = require('gulp-clean'),
 	connect = require('gulp-connect'),
 	sass = require('gulp-sass'),
 	autoprefixer = require('gulp-autoprefixer'),
@@ -26,6 +26,16 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./app/css/'));
 });
 
+gulp.task('clean', function () {
+  return gulp.src('./build/**/*', {read: false})
+    .pipe(clean());
+});
+
+gulp.task('copy-img', function() {
+  gulp.src('./app/img/*')
+    .pipe( gulp.dest('./build/img'));
+});
+
 gulp.task('usemin', function() {
   return gulp.src('./app/index.html')
     .pipe(usemin({
@@ -49,4 +59,4 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', gulpSequence( 'sass', 'server', 'reload', 'watch'));
-gulp.task('build', gulpSequence( 'sass', 'usemin'));
+gulp.task('build', gulpSequence( 'clean', ['copy-img', 'sass'], 'usemin'));
